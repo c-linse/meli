@@ -589,27 +589,50 @@ Global (red only): British/EU spelling; author-year -> superscript in the
       sections above.
 
 ================================================================================
-REMAINING TODOs  (need you / out of today's red-only scope)
+STATUS
 ================================================================================
 
-1. Figure 1 — applicant to supply (phyB thermal-time / plastochron phenotype).
-   Referenced from the new "Preliminary results." paragraph.
-2. DONE — whole document unified to superscript numerals + one ZOE-format
-   reference list (see "CITATION UNIFICATION" block). All 9 references complete.
-3. DONE — hypocotyl-thermosensing paragraph cited with refs 4 and 5 (the
-   thermosensing references available in Scientific_proposal.pdf). Note: no
-   ELF3- or PIF7-specific primary paper exists in that bibliography, so the
-   Legris et al. 2019 review (ref 5) umbrella-covers them; add primary papers
-   later if a reviewer expects them.
-4. Section numbering: the doc uses "1." "2." "3." then "1.4" under "1. Excellence".
-   MSCA template is 1.1 / 1.2 / 1.3 / 1.4. Cosmetic; recommend fixing.
-5. Project has a short title only inside the text ("...linking temperature
-   perception to plastochron regulation"). MSCA B1 usually carries a project
-   title + acronym at the top (cf. "Light2Shape" in the ZOE sample). Add?
-6. §3 (Quality and Efficiency of the Implementation) is still "Insert here text
-   for your proposal" — Gantt chart, risk table, host-capacity text all to be
-   written (was not in the red-marked scope).
-7. Verify: R. Reis first name / exact unit at U Bern for the final text; whether
-   "Dr" or "Prof".
-8. Page limit: B1 is max 10 pages. Re-check length after pasting — the expanded
-   §1.2 and the new preliminary-results paragraph add ~half a page.
+RESOLVED this session:
+  - All red-marked passages rewritten (§1.1 WP2/WP3/Originality, §1.2 methodology,
+    §1.3 training/supervision/secondment, §1.4 phrase, §2.1/2.2/2.3).
+  - All bracketed placeholders filled or reduced to one optional bracket
+    (§2.2 public-engagement local formats).
+  - Citations: whole of Part B-1 unified to superscript numerals + one ZOE-format
+    list; all 9 references complete; hypocotyl-thermosensing paragraph cited.
+  - Approved black-text fixes: WP1 title; dangling hypoxia sentence deleted;
+    stray "thermal time" footnote marker removed.
+
+================================================================================
+REMAINING TODOs
+================================================================================
+
+A. NEEDS THE APPLICANT
+  1. Figure 1 — supply (phyB thermal-time / plastochron phenotype); referenced
+     from the new "Preliminary results." paragraph.
+  2. §2.2 Communication — confirm the local public-engagement formats in the
+     bracket (e.g. Jardin botanique de Neuchâtel, Fascination of Plants Day,
+     Pint of Science).
+  3. R. Reis (U Bern) — confirm first name, exact unit/institute, and title
+     (Dr / Prof) for the final text of §1.2 Task 3.2 and §1.3 Secondment.
+
+B. STILL TO WRITE (was outside the red-only scope)
+  4. §3 Quality and Efficiency of the Implementation — Gantt chart, risk table,
+     and §3.2 host-capacity text are still "Insert here text for your proposal".
+  5. Part B-2 §5.2 (host capacity table) and §8 (MSCA Green Charter) — still
+     template text.
+
+C. FORMATTING / POLISH ON PASTE
+  6. Section numbering: doc uses "1." "2." "3." then "1.4" under "1. Excellence";
+     MSCA template is 1.1 / 1.2 / 1.3 / 1.4.
+  7. Project title + acronym at the top (cf. "Light2Shape" in the ZOE sample) —
+     currently only a descriptive phrase inside the text.
+  8. Normalise §2 to the body font (Times New Roman 11); render all "^N" markers
+     as real superscripts.
+  9. Page limit: B-1 is max 10 pages — re-check after pasting; the expanded §1.2
+     and the new "Preliminary results." paragraph add ~half a page.
+
+D. OPTIONAL (only if a reviewer expects it)
+ 10. Add ELF3- and PIF7-specific primary papers to the hypocotyl-thermosensing
+     paragraph (currently umbrella-cited by the Legris et al. 2019 review).
+ 11. Add a citation for the thermal-time concept in §1.1 (e.g. Parent and
+     Tardieu 2012) and renumber.
