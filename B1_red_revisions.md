@@ -2,9 +2,9 @@
 
 Workflow: plain text below, section by section. Paste into your Word template and
 normalise to the body font (Times New Roman 11). British/EU spelling throughout.
-Citations: superscript numerals; reference list at the end in the MSCA_B1 ZOE
-compact format. Final numbering must be merged with the black-text citations
-(see "Remaining TODOs").
+Citations: the whole of Part B-1 is unified to superscript numerals with one
+reference list in the MSCA_B1 ZOE compact format — see the "CITATION UNIFICATION"
+block near the end for the master list and every in-text position (black + red).
 
 ================================================================================
 §1.1  EXCELLENCE — objectives
@@ -131,7 +131,7 @@ map reactive redox species in the living apex across temperatures and in phyB: t
 superoxide/hydrogen peroxide balance (DHE and NBT for O2.-; H2DCFDA and DAB for
 H2O2), quantified by confocal imaging and histochemistry. The question is whether
 warm temperature reconfigures the central-versus-peripheral redox pattern
-described by Zeng et al.[Zeng2017,Zeng2023], and whether any such change depends
+described by Zeng et al.^{2,3}, and whether any such change depends
 on phyB.
 
 Task 2.2 — Nitric oxide as a candidate temperature transducer. NO is detected in
@@ -164,7 +164,7 @@ genuinely compensated on a thermal-time basis should not differ between
 temperatures once thermal time is matched.
 
 Task 3.2 — Analysis and candidate networks. Predictions from Zeng et
-al.[Zeng2017,Zeng2023] anchor quality control and a targeted analysis panel:
+al.^{2,3} anchor quality control and a targeted analysis panel:
 WUS/CLV3 targets, AGO4 and RdDM components, zonal ROS-metabolising enzymes, the
 NO-biosynthesis genes NIA1, NIA2 and NOA1, and auxin readouts. Library
 preparation and single-cell analysis are carried out in collaboration with
@@ -220,8 +220,8 @@ manipulation of NO with donors and scavengers, and the biochemistry of
 cysteine-based post-translational modifications, including biotin-switch
 workflows. The group's interest in redox as an integrator of environmental and
 endogenous cues in the meristem is explicit and current — for example in the
-shade-induced ROS/NO work my supervisor co-authored (Iglesias et al., PNAS,
-2024) — but the technical capacity to pursue it in vivo is not yet established in
+shade-induced ROS/NO work my supervisor co-authored^7 — but the technical
+capacity to pursue it in vivo is not yet established in
 Neuchâtel. My arrival makes that line executable and installs a capability that
 will outlive the fellowship: a genuine two-way transfer of knowledge.
 
@@ -235,10 +235,9 @@ and temperature, with over 20 publications including first- or corresponding-
 author papers in Science, PNAS, Nature Communications, New Phytologist and Plant
 Physiology, and she received the 2023 New Phytologist Tansley Medal. Her
 contribution is foundational: she is first author of the work establishing phyB as
-a thermosensor that integrates light and temperature in Arabidopsis (Legris et
-al., Science, 2016), and she has since developed the study of light and
-temperature control of leaf and meristem morphogenesis (Legris et al., Nat
-Commun, 2019; Legris, New Phytologist, 2023; Iglesias et al., PNAS, 2024). She
+a thermosensor that integrates light and temperature in Arabidopsis^4, and she has
+since developed the study of light and temperature control of leaf and meristem
+morphogenesis^{5,6,7}. She
 trained in the Casal and Fankhauser laboratories and is herself a former MSCA,
 EMBO and HFSP fellow, so she knows the fellowship from the inside. My project is a
 direct extension of a question her own work opened — how temperature is read in
@@ -278,13 +277,16 @@ In the sentence about the Paris-Saclay research stay:
   connects directly to the AGO4/RdDM dimension of the redox–meristem link
   addressed in WP2 and WP3.")
 
-- REPLACE the placeholder "(CITA)" with: "(Nejamkin et al., J. Plant Growth
-  Regul., 2025)"  [-> superscript once converted]
+- REPLACE the placeholder "(CITA)" with superscript ^9 (Nejamkin et al. 2025;
+  ref 9 in the list below). Full clause after the tidy:
+  "...collaborations of my own, including with Lamattina's group in Mar del Plata
+  (2021), which resulted in a co-authored paper^9, and a research stay in the
+  Chromosome Dynamics group at IPS2, Université Paris-Saclay (2025), whose
+  expertise in chromatin biology and DNA methylation connects directly to the
+  AGO4/RdDM dimension of the redox–meristem link addressed in WP2 and WP3."
 
-- TIDY (approved): "...collaborations with diverse groups, including
-  collaborations with Lamattina's group in Mar del Plata (2021)..."
-  -> "...collaborations of my own, including with Lamattina's group in Mar del
-  Plata (2021)..."
+- In the earlier sentence, "published as first author (Luquet et al., Plant
+  Science, 2025)" -> "published as first author^8".
 
 ================================================================================
 §2.1  IMPACT — career perspectives
@@ -463,27 +465,68 @@ the project ends — and by training a researcher whose combined skill set is
 scarce.
 
 ================================================================================
-REFERENCE LIST — red-section citations (compact ZOE format)
+CITATION UNIFICATION — whole of Part B-1 (§1.1–§1.4)
 ================================================================================
 
-Numbering below is provisional (R1..). When the black-text citations are
-converted to superscripts, renumber the whole list in reading order.
+STYLE: every in-text citation becomes a superscript numeral (no author-year in
+the running text), numbered in order of first appearance. One reference list in
+the MSCA_B1 ZOE compact format:  "N  Author et al. (year), Journal. vol:pages".
+Place it as page-bottom footnotes or a short end block, matching the template.
 
-R1  Zeng et al. (2017), EMBO Journal. 36:2844–2855
-R2  Zeng et al. (2023), Nature Communications. 14:8001
-R3  Legris et al. (2016), Science. 354:897–900
-R4  Legris et al. (2019), Nature Communications. 10:5219
-R5  Legris (2023), New Phytologist. 240:2191–2196
-R6  Iglesias et al. (2024), PNAS. 121:e2320187121
-R7  Nejamkin et al. (2025), Journal of Plant Growth Regulation.
+--------------------------------------------------------------------------------
+MASTER REFERENCE LIST (final numbering)
+--------------------------------------------------------------------------------
+1  Wenzl and Lohmann (2023), [full reference to supply — you cited it]
+2  Zeng et al. (2017), EMBO Journal. 36:2844–2855
+3  Zeng et al. (2023), Nature Communications. 14:8001
+4  Legris et al. (2016), Science. 354:897–900
+5  Legris et al. (2019), Nature Communications. 10:5219
+6  Legris (2023), New Phytologist. 240:2191–2196
+7  Iglesias et al. (2024), PNAS. 121:e2320187121
+8  Luquet et al. (2025), Plant Science. 352:112377
+9  Nejamkin et al. (2025), Journal of Plant Growth Regulation. [add vol:pages]
 
-In-text superscript positions:
-  §1.2 Task 2.1  "...described by Zeng et al." -> R1,R2
-  §1.2 Task 3.2  "Predictions from Zeng et al." -> R1,R2
-  §1.3 Quality of supervision  Science 2016 -> R3 ; Nat Commun 2019 -> R4 ;
-       New Phytologist 2023 -> R5 ; Iglesias PNAS 2024 -> R6
-  §1.3 What I bring  Iglesias et al., PNAS, 2024 -> R6
-  §1.4  Nejamkin et al. -> R7
+--------------------------------------------------------------------------------
+IN-TEXT SUPERSCRIPTS — every position in the document
+--------------------------------------------------------------------------------
+BLACK text — find / replace (only the citation marker changes):
+
+  §1.1 Introduction
+    "...linearly related to the thermal time1: the amount of degrees the plant
+     experience over a period of time."
+    ->  "...linearly related to thermal time — the number of degree-days the
+         plant experiences over a given period."
+    (removes the stray superscript "1", which had no reference; fixes grammar.
+     If you want a citation for the thermal-time concept, add e.g. Parent and
+     Tardieu (2012), New Phytologist. 194:760-774 and renumber.)
+
+  §1.1 State of the art
+    "...WUS/CLV3 expression patterns (Wenzl and Lohmann, 2023)."
+        -> "...WUS/CLV3 expression patterns^1."
+    "...reduces SAM size and delays early leaf development (Zeng et al., 2017;
+     Zeng et al., 2023)."
+        -> "...reduces SAM size and delays early leaf development^{2,3}."
+    "...WUS interacting with AGO4 in a NO-dependent manner (Zeng et al., 2023)."
+        -> "...WUS interacting with AGO4 in a NO-dependent manner^3."
+
+  §1.1 Hypocotyl-thermosensing paragraph (phyB / ELF3 / PIF7 / PIF4 / COP1) —
+     currently has NO citations. See TODO 3: supply your preferred refs and I
+     will insert superscripts and renumber. phyB there can reuse ref 4.
+
+  §1.4
+    "published as first author (Luquet et al., Plant Science, 2025)"
+        -> "published as first author^8"
+
+RED text — already marked in the drafts above:
+  §1.2 Task 2.1   "...described by Zeng et al.^{2,3}"
+  §1.2 Task 3.2   "Predictions from Zeng et al.^{2,3}"
+  §1.3 Quality of supervision   phyB thermosensor -> ^4 ;
+       "leaf and meristem morphogenesis" -> ^{5,6,7}
+  §1.3 What I bring   "...work my supervisor co-authored^7"
+  §1.4   "...a co-authored paper^9..."
+
+NOTE: "^N" and "^{N,M}" denote superscripts — format them as superscript on
+paste; do not leave the caret/braces in the text.
 
 ================================================================================
 CHANGE LOG
@@ -516,8 +559,12 @@ CHANGE LOG
       year-2 master's-student co-supervision.
       "Secondment." heading filled: none foreseen; Reis = collaboration not
       secondment.
-§1.4  red phrase reworded; (CITA) -> Nejamkin et al. 2025 (published); double
-      "collaborations" tidied.
+§1.4  red phrase reworded; (CITA) -> Nejamkin et al. 2025 (published, ref 9);
+      Luquet et al. 2025 -> ref 8; double "collaborations" tidied.
+CITES Whole of B-1 unified to superscript numerals + one ZOE-format list (see
+      "CITATION UNIFICATION" block). 9 references; #1 (Wenzl and Lohmann) needs
+      full details from you; hypocotyl-thermosensing paragraph still to be
+      cited (TODO 3).
 §2.1  [Weits/Utrecht secondment] sentence removed; WP3/Bern training folded in.
       conference placeholder filled (ICAR / EPSO Plant Biology Europe /
       thermomorphogenesis & development). "his/her" -> "their". EMBO Lab
@@ -538,13 +585,15 @@ REMAINING TODOs  (need you / out of today's red-only scope)
 
 1. Figure 1 — applicant to supply (phyB thermal-time / plastochron phenotype).
    Referenced from the new "Preliminary results." paragraph.
-2. Black-text citation conversion — the State-of-the-art paragraphs still use
-   author-year (Wenzl and Lohmann 2023; Zeng 2017/2023; the undefined footnote
-   "1" on "thermal time"; Luquet et al. Plant Science 2025 in §1.4). Convert to
-   superscript and merge into one numbered reference list when you're ready — say
-   the word and I'll do this pass.
-3. §1.2 hypocotyl-thermosensing paragraph (black) currently cites nothing for
-   phyB / ELF3 / PIF7 / PIF4 / COP1. Consider adding references.
+2. DONE — whole document unified to superscript numerals + one ZOE-format
+   reference list (see "CITATION UNIFICATION" block). Outstanding:
+     - ref 1 (Wenzl and Lohmann 2023): supply the full reference.
+     - ref 9 (Nejamkin et al. 2025): add volume:pages now it is published.
+3. §1.1 hypocotyl-thermosensing paragraph (phyB / ELF3 / PIF7 / PIF4 / COP1)
+   still has no citations. Give me your preferred sources (or approve a standard
+   set: Legris et al. 2016 for phyB [=ref 4]; Jung et al. 2020 Nature for ELF3;
+   Chung et al. 2020 Nature Plants for PIF7; Casal and Balasubramanian 2019 Annu
+   Rev Plant Biol for the PIF4/COP1 convergence) and I will insert + renumber.
 4. Section numbering: the doc uses "1." "2." "3." then "1.4" under "1. Excellence".
    MSCA template is 1.1 / 1.2 / 1.3 / 1.4. Cosmetic; recommend fixing.
 5. Project has a short title only inside the text ("...linking temperature
