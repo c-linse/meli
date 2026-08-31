@@ -5,6 +5,43 @@ normalise to the body font (Times New Roman 11). British/EU spelling throughout.
 Citations: the whole of Part B-1 is unified to superscript numerals with one
 reference list in the MSCA_B1 ZOE compact format — see the "CITATION UNIFICATION"
 block near the end for the master list and every in-text position (black + red).
+Superscript markers are already rendered as Unicode characters (¹ ² ³ … , ²⁻³ ,
+⁵⁻⁷) so they need no formatting on paste.
+
+================================================================================
+§0  PROJECT TITLE, ACRONYM, HEADERS  (new)
+================================================================================
+
+ACRONYM:  MERISTIME   (MERIStem + TIME)
+TITLE:    MERISTIME — From thermosensing to organ timing in the shoot apical
+          meristem
+
+Placement (cf. "Light2Shape" in MSCA_B1 ZOE.pdf):
+
+1. Running header on every page of Part B-1:
+     Call: HORIZON-MSCA-2025-PF — MERISTIME
+2. As a centred, bold title line directly under the "1.1" heading and above
+   "Introduction.":
+     MERISTIME — From thermosensing to organ timing in the shoot apical meristem
+3. Enter the acronym MERISTIME in the submission system's proposal-acronym field.
+
+================================================================================
+§0b  SECTION RENUMBERING  (formatting fix)
+================================================================================
+
+Under "1. Excellence", the three subsection headings are numbered 1. / 2. / 3.
+and must become 1.1 / 1.2 / 1.3 (MSCA template). No in-text cross-reference uses
+these numbers, so nothing else changes.
+
+  "1.  Quality and pertinence of the project's research and innovation
+       objectives …"                                        ->  1.1
+  "2.  Soundness of the proposed methodology …"              ->  1.2
+  "3.  Quality of the supervision, training and of the two-way transfer …"  -> 1.3
+  "1.4 Quality and appropriateness of the researcher's professional
+       experience …"                                        ->  unchanged (1.4)
+
+"2. Impact" with 2.1 / 2.2 / 2.3, and "3. Quality and Efficiency of the
+Implementation" with 3.1 / 3.2, are already correct.
 
 ================================================================================
 §1.1  EXCELLENCE — objectives
@@ -131,7 +168,7 @@ map reactive redox species in the living apex across temperatures and in phyB: t
 superoxide/hydrogen peroxide balance (DHE and NBT for O2.-; H2DCFDA and DAB for
 H2O2), quantified by confocal imaging and histochemistry. The question is whether
 warm temperature reconfigures the central-versus-peripheral redox pattern
-described by Zeng et al.^{2,3}, and whether any such change depends
+described by Zeng et al.²⁻³, and whether any such change depends
 on phyB.
 
 Task 2.2 — Nitric oxide as a candidate temperature transducer. NO is detected in
@@ -164,7 +201,7 @@ genuinely compensated on a thermal-time basis should not differ between
 temperatures once thermal time is matched.
 
 Task 3.2 — Analysis and candidate networks. Predictions from Zeng et
-al.^{2,3} anchor quality control and a targeted analysis panel:
+al.²⁻³ anchor quality control and a targeted analysis panel:
 WUS/CLV3 targets, AGO4 and RdDM components, zonal ROS-metabolising enzymes, the
 NO-biosynthesis genes NIA1, NIA2 and NOA1, and auxin readouts. Library
 preparation and single-cell analysis are carried out in collaboration with
@@ -220,7 +257,7 @@ manipulation of NO with donors and scavengers, and the biochemistry of
 cysteine-based post-translational modifications, including biotin-switch
 workflows. The group's interest in redox as an integrator of environmental and
 endogenous cues in the meristem is explicit and current — for example in the
-shade-induced ROS/NO work my supervisor co-authored^7 — but the technical
+shade-induced ROS/NO work my supervisor co-authored⁷ — but the technical
 capacity to pursue it in vivo is not yet established in
 Neuchâtel. My arrival makes that line executable and installs a capability that
 will outlive the fellowship: a genuine two-way transfer of knowledge.
@@ -235,9 +272,9 @@ and temperature, with over 20 publications including first- or corresponding-
 author papers in Science, PNAS, Nature Communications, New Phytologist and Plant
 Physiology, and she received the 2023 New Phytologist Tansley Medal. Her
 contribution is foundational: she is first author of the work establishing phyB as
-a thermosensor that integrates light and temperature in Arabidopsis^4, and she has
+a thermosensor that integrates light and temperature in Arabidopsis⁴, and she has
 since developed the study of light and temperature control of leaf and meristem
-morphogenesis^{5,6,7}. She
+morphogenesis⁵⁻⁷. She
 trained in the Casal and Fankhauser laboratories and is herself a former MSCA,
 EMBO and HFSP fellow, so she knows the fellowship from the inside. My project is a
 direct extension of a question her own work opened — how temperature is read in
@@ -277,16 +314,16 @@ In the sentence about the Paris-Saclay research stay:
   connects directly to the AGO4/RdDM dimension of the redox–meristem link
   addressed in WP2 and WP3.")
 
-- REPLACE the placeholder "(CITA)" with superscript ^9 (Nejamkin et al. 2025;
-  ref 9 in the list below). Full clause after the tidy:
+- REPLACE the placeholder "(CITA)" with superscript ⁹ (Nejamkin et al. 2025;
+  ref 9). Full clause after the tidy:
   "...collaborations of my own, including with Lamattina's group in Mar del Plata
-  (2021), which resulted in a co-authored paper^9, and a research stay in the
+  (2021), which resulted in a co-authored paper⁹, and a research stay in the
   Chromosome Dynamics group at IPS2, Université Paris-Saclay (2025), whose
   expertise in chromatin biology and DNA methylation connects directly to the
   AGO4/RdDM dimension of the redox–meristem link addressed in WP2 and WP3."
 
 - In the earlier sentence, "published as first author (Luquet et al., Plant
-  Science, 2025)" -> "published as first author^8".
+  Science, 2025)" -> "published as first author⁸".
 
 ================================================================================
 §2.1  IMPACT — career perspectives
@@ -469,14 +506,16 @@ CITATION UNIFICATION — whole of Part B-1 (§1.1–§1.4)
 ================================================================================
 
 STYLE: every in-text citation becomes a superscript numeral (no author-year in
-the running text), numbered in order of first appearance. One reference list in
-the MSCA_B1 ZOE compact format:  "N  Author et al. (year), Journal. vol:pages".
+the running text), numbered in order of first appearance. Adjacent refs cited
+together are shown as a superscript range (²⁻³, ⁵⁻⁷). One reference list in the
+MSCA_B1 ZOE compact format:  "N  Author et al. (year), Journal. vol:pages".
 Place it as page-bottom footnotes or a short end block, matching the template.
+The markers below are already Unicode superscripts — paste them as-is.
 
 --------------------------------------------------------------------------------
 MASTER REFERENCE LIST (final numbering)
 --------------------------------------------------------------------------------
-1  Wenzl and Lohmann (2023), [full reference to supply — you cited it]
+1  Wenzl and Lohmann (2023), Cells & Development. 175:203850
 2  Zeng et al. (2017), EMBO Journal. 36:2844–2855
 3  Zeng et al. (2023), Nature Communications. 14:8001
 4  Legris et al. (2016), Science. 354:897–900
@@ -484,7 +523,7 @@ MASTER REFERENCE LIST (final numbering)
 6  Legris (2023), New Phytologist. 240:2191–2196
 7  Iglesias et al. (2024), PNAS. 121:e2320187121
 8  Luquet et al. (2025), Plant Science. 352:112377
-9  Nejamkin et al. (2025), Journal of Plant Growth Regulation. [add vol:pages]
+9  Nejamkin et al. (2025), Journal of Plant Growth Regulation. 44:5147–5159
 
 --------------------------------------------------------------------------------
 IN-TEXT SUPERSCRIPTS — every position in the document
@@ -502,31 +541,38 @@ BLACK text — find / replace (only the citation marker changes):
 
   §1.1 State of the art
     "...WUS/CLV3 expression patterns (Wenzl and Lohmann, 2023)."
-        -> "...WUS/CLV3 expression patterns^1."
+        -> "...WUS/CLV3 expression patterns¹."
     "...reduces SAM size and delays early leaf development (Zeng et al., 2017;
      Zeng et al., 2023)."
-        -> "...reduces SAM size and delays early leaf development^{2,3}."
+        -> "...reduces SAM size and delays early leaf development²⁻³."
     "...WUS interacting with AGO4 in a NO-dependent manner (Zeng et al., 2023)."
-        -> "...WUS interacting with AGO4 in a NO-dependent manner^3."
+        -> "...WUS interacting with AGO4 in a NO-dependent manner³."
 
-  §1.1 Hypocotyl-thermosensing paragraph (phyB / ELF3 / PIF7 / PIF4 / COP1) —
-     currently has NO citations. See TODO 3: supply your preferred refs and I
-     will insert superscripts and renumber. phyB there can reuse ref 4.
+  §1.1 Hypocotyl-thermosensing paragraph — add two citations already in the list
+     (no renumbering). Also "signaling" -> "signalling".
+       "...phytochrome B (phyB) acts as a thermosensor inactivated at warm
+        temperature;"
+          -> "...inactivated at warm temperature⁴;"
+       "...Downstream, signaling converges on PIF4 and the E3 ligase COP1."
+          -> "...Downstream, signalling converges on PIF4 and the E3 ligase
+             COP1⁵."
+     (ref 4 = Legris et al. 2016, primary phyB paper; ref 5 = Legris et al. 2019
+     Nat Commun review — the only thermosensing references in Scientific_
+     proposal.pdf; it covers phyB/PIF4/PIF7/COP1. No dedicated ELF3 or PIF7
+     primary paper is available in that bibliography.)
 
   §1.4
     "published as first author (Luquet et al., Plant Science, 2025)"
-        -> "published as first author^8"
+        -> "published as first author⁸"
 
-RED text — already marked in the drafts above:
-  §1.2 Task 2.1   "...described by Zeng et al.^{2,3}"
-  §1.2 Task 3.2   "Predictions from Zeng et al.^{2,3}"
-  §1.3 Quality of supervision   phyB thermosensor -> ^4 ;
-       "leaf and meristem morphogenesis" -> ^{5,6,7}
-  §1.3 What I bring   "...work my supervisor co-authored^7"
-  §1.4   "...a co-authored paper^9..."
-
-NOTE: "^N" and "^{N,M}" denote superscripts — format them as superscript on
-paste; do not leave the caret/braces in the text.
+RED text — the Unicode markers are already in the drafts above:
+  §1.2 Task 2.1   "...described by Zeng et al.²⁻³"
+  §1.2 Task 3.2   "Predictions from Zeng et al.²⁻³"
+  §1.3 Quality of supervision   "...in Arabidopsis⁴, and she has since developed
+       the study of light and temperature control of leaf and meristem
+       morphogenesis⁵⁻⁷."
+  §1.3 What I bring   "...work my supervisor co-authored⁷"
+  §1.4   "...a co-authored paper⁹..."
 
 ================================================================================
 CHANGE LOG
@@ -562,9 +608,12 @@ CHANGE LOG
 §1.4  red phrase reworded; (CITA) -> Nejamkin et al. 2025 (published, ref 9);
       Luquet et al. 2025 -> ref 8; double "collaborations" tidied.
 CITES Whole of B-1 unified to superscript numerals + one ZOE-format list (see
-      "CITATION UNIFICATION" block). 9 references; #1 (Wenzl and Lohmann) needs
-      full details from you; hypocotyl-thermosensing paragraph still to be
-      cited (TODO 3).
+      "CITATION UNIFICATION" block). 9 references, all complete. Markers rendered
+      as Unicode superscripts (¹ … ⁹, ²⁻³, ⁵⁻⁷) — no Word formatting needed.
+FMT   §0 added: acronym MERISTIME + title "MERISTIME — From thermosensing to
+      organ timing in the shoot apical meristem"; running header and title-line
+      placement specified. §0b: renumber 1./2./3. -> 1.1/1.2/1.3 under
+      "1. Excellence". Page estimate done (see STATUS).
 §2.1  [Weits/Utrecht secondment] sentence removed; WP3/Bern training folded in.
       conference placeholder filled (ICAR / EPSO Plant Biology Europe /
       thermomorphogenesis & development). "his/her" -> "their". EMBO Lab
@@ -580,29 +629,62 @@ Global (red only): British/EU spelling; author-year -> superscript in the
       sections above.
 
 ================================================================================
-REMAINING TODOs  (need you / out of today's red-only scope)
+STATUS
 ================================================================================
 
-1. Figure 1 — applicant to supply (phyB thermal-time / plastochron phenotype).
-   Referenced from the new "Preliminary results." paragraph.
-2. DONE — whole document unified to superscript numerals + one ZOE-format
-   reference list (see "CITATION UNIFICATION" block). Outstanding:
-     - ref 1 (Wenzl and Lohmann 2023): supply the full reference.
-     - ref 9 (Nejamkin et al. 2025): add volume:pages now it is published.
-3. §1.1 hypocotyl-thermosensing paragraph (phyB / ELF3 / PIF7 / PIF4 / COP1)
-   still has no citations. Give me your preferred sources (or approve a standard
-   set: Legris et al. 2016 for phyB [=ref 4]; Jung et al. 2020 Nature for ELF3;
-   Chung et al. 2020 Nature Plants for PIF7; Casal and Balasubramanian 2019 Annu
-   Rev Plant Biol for the PIF4/COP1 convergence) and I will insert + renumber.
-4. Section numbering: the doc uses "1." "2." "3." then "1.4" under "1. Excellence".
-   MSCA template is 1.1 / 1.2 / 1.3 / 1.4. Cosmetic; recommend fixing.
-5. Project has a short title only inside the text ("...linking temperature
-   perception to plastochron regulation"). MSCA B1 usually carries a project
-   title + acronym at the top (cf. "Light2Shape" in the ZOE sample). Add?
-6. §3 (Quality and Efficiency of the Implementation) is still "Insert here text
-   for your proposal" — Gantt chart, risk table, host-capacity text all to be
-   written (was not in the red-marked scope).
-7. Verify: R. Reis first name / exact unit at U Bern for the final text; whether
-   "Dr" or "Prof".
-8. Page limit: B1 is max 10 pages. Re-check length after pasting — the expanded
-   §1.2 and the new preliminary-results paragraph add ~half a page.
+RESOLVED this session:
+  - All red-marked passages rewritten (§1.1 WP2/WP3/Originality, §1.2 methodology,
+    §1.3 training/supervision/secondment, §1.4 phrase, §2.1/2.2/2.3).
+  - All bracketed placeholders filled or reduced to one optional bracket
+    (§2.2 public-engagement local formats).
+  - Citations: whole of Part B-1 unified to superscript numerals + one ZOE-format
+    list; all 9 references complete; hypocotyl-thermosensing paragraph cited.
+  - Approved black-text fixes: WP1 title; dangling hypoxia sentence deleted;
+    stray "thermal time" footnote marker removed.
+  - Formatting/polish (§0, §0b): project title + acronym MERISTIME defined and
+    placed; section renumbering 1./2./3. -> 1.1/1.2/1.3 specified; superscript
+    markers converted to Unicode. Page estimate below.
+
+PAGE ESTIMATE (Part B-1, max 10 pp):
+  Current §1+§2 occupy ~6.5 pp of the PDF. The revisions are close to
+  length-neutral for §2 (the rewrites replace full paragraphs, not stubs); the
+  real additions are the new "Preliminary results" paragraph (~150 words) and
+  the slightly more verbose Task structure in §1.2 (~150 words) — together
+  ~+0.5 page. Expect §1+§2 ~= 7 pp, leaving ~3 pp for §3 (Gantt + risk table +
+  §3.2). Feasible, but §3 must be kept tight — the Gantt alone typically takes
+  most of a page. Re-measure once pasted; if over, first trim targets are the
+  §2.3 "Scientific impact" paragraph and the second half of §2.1.
+
+================================================================================
+REMAINING TODOs
+================================================================================
+
+A. NEEDS THE APPLICANT
+  1. Figure 1 — supply (phyB thermal-time / plastochron phenotype); referenced
+     from the new "Preliminary results." paragraph.
+  2. §2.2 Communication — confirm the local public-engagement formats in the
+     bracket (e.g. Jardin botanique de Neuchâtel, Fascination of Plants Day,
+     Pint of Science).
+  3. R. Reis (U Bern) — confirm first name, exact unit/institute, and title
+     (Dr / Prof) for the final text of §1.2 Task 3.2 and §1.3 Secondment.
+
+B. STILL TO WRITE (was outside the red-only scope)
+  4. §3 Quality and Efficiency of the Implementation — Gantt chart, risk table,
+     and §3.2 host-capacity text are still "Insert here text for your proposal".
+  5. Part B-2 §5.2 (host capacity table) and §8 (MSCA Green Charter) — still
+     template text.
+
+C. FORMATTING / POLISH ON PASTE
+  6. DONE (spec) — section renumbering: see §0b. Apply the heading changes in Word.
+  7. DONE (spec) — project title + acronym MERISTIME: see §0. Add running header,
+     title line, and the acronym field.
+  8. Superscripts DONE (Unicode). Still: normalise §2 to the body font (Times New
+     Roman 11) — §2 was pasted in a different face.
+  9. Page estimate DONE (see STATUS): expect §1+§2 ~= 7 pp, ~3 pp left for §3.
+     Re-measure after pasting; trim targets noted if over.
+
+D. OPTIONAL (only if a reviewer expects it)
+ 10. Add ELF3- and PIF7-specific primary papers to the hypocotyl-thermosensing
+     paragraph (currently umbrella-cited by the Legris et al. 2019 review).
+ 11. Add a citation for the thermal-time concept in §1.1 (e.g. Parent and
+     Tardieu 2012) and renumber.
