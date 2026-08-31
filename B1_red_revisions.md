@@ -484,7 +484,7 @@ MASTER REFERENCE LIST (final numbering)
 6  Legris (2023), New Phytologist. 240:2191–2196
 7  Iglesias et al. (2024), PNAS. 121:e2320187121
 8  Luquet et al. (2025), Plant Science. 352:112377
-9  Nejamkin et al. (2025), Journal of Plant Growth Regulation. [add vol:pages]
+9  Nejamkin et al. (2025), Journal of Plant Growth Regulation. 44:5147–5159
 
 --------------------------------------------------------------------------------
 IN-TEXT SUPERSCRIPTS — every position in the document
@@ -573,7 +573,7 @@ CHANGE LOG
 CITES Whole of B-1 unified to superscript numerals + one ZOE-format list (see
       "CITATION UNIFICATION" block). 9 references. Ref 1 = Wenzl and Lohmann
       (2023), Cells & Development. 175:203850. Hypocotyl-thermosensing paragraph
-      cited with refs 4 and 5. Ref 9 vol:pages still to add.
+      cited with refs 4 and 5. All 9 references complete.
 §2.1  [Weits/Utrecht secondment] sentence removed; WP3/Bern training folded in.
       conference placeholder filled (ICAR / EPSO Plant Biology Europe /
       thermomorphogenesis & development). "his/her" -> "their". EMBO Lab
@@ -595,9 +595,7 @@ REMAINING TODOs  (need you / out of today's red-only scope)
 1. Figure 1 — applicant to supply (phyB thermal-time / plastochron phenotype).
    Referenced from the new "Preliminary results." paragraph.
 2. DONE — whole document unified to superscript numerals + one ZOE-format
-   reference list (see "CITATION UNIFICATION" block). Ref 1 (Wenzl & Lohmann
-   2023) now complete. Outstanding: ref 9 (Nejamkin et al. 2025) add vol:pages
-   now it is published.
+   reference list (see "CITATION UNIFICATION" block). All 9 references complete.
 3. DONE — hypocotyl-thermosensing paragraph cited with refs 4 and 5 (the
    thermosensing references available in Scientific_proposal.pdf). Note: no
    ELF3- or PIF7-specific primary paper exists in that bibliography, so the
