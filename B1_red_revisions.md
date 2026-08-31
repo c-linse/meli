@@ -476,7 +476,7 @@ Place it as page-bottom footnotes or a short end block, matching the template.
 --------------------------------------------------------------------------------
 MASTER REFERENCE LIST (final numbering)
 --------------------------------------------------------------------------------
-1  Wenzl and Lohmann (2023), [full reference to supply — you cited it]
+1  Wenzl and Lohmann (2023), Cells & Development. 175:203850
 2  Zeng et al. (2017), EMBO Journal. 36:2844–2855
 3  Zeng et al. (2023), Nature Communications. 14:8001
 4  Legris et al. (2016), Science. 354:897–900
@@ -509,9 +509,18 @@ BLACK text — find / replace (only the citation marker changes):
     "...WUS interacting with AGO4 in a NO-dependent manner (Zeng et al., 2023)."
         -> "...WUS interacting with AGO4 in a NO-dependent manner^3."
 
-  §1.1 Hypocotyl-thermosensing paragraph (phyB / ELF3 / PIF7 / PIF4 / COP1) —
-     currently has NO citations. See TODO 3: supply your preferred refs and I
-     will insert superscripts and renumber. phyB there can reuse ref 4.
+  §1.1 Hypocotyl-thermosensing paragraph — add two citations already in the list
+     (no renumbering). Also "signaling" -> "signalling".
+       "...phytochrome B (phyB) acts as a thermosensor inactivated at warm
+        temperature;"
+          -> "...inactivated at warm temperature^4;"
+       "...Downstream, signaling converges on PIF4 and the E3 ligase COP1."
+          -> "...Downstream, signalling converges on PIF4 and the E3 ligase
+             COP1^5."
+     (ref 4 = Legris et al. 2016, primary phyB paper; ref 5 = Legris et al. 2019
+     Nat Commun review — the only thermosensing references in Scientific_
+     proposal.pdf; it covers phyB/PIF4/PIF7/COP1. No dedicated ELF3 or PIF7
+     primary paper is available in that bibliography.)
 
   §1.4
     "published as first author (Luquet et al., Plant Science, 2025)"
@@ -562,9 +571,9 @@ CHANGE LOG
 §1.4  red phrase reworded; (CITA) -> Nejamkin et al. 2025 (published, ref 9);
       Luquet et al. 2025 -> ref 8; double "collaborations" tidied.
 CITES Whole of B-1 unified to superscript numerals + one ZOE-format list (see
-      "CITATION UNIFICATION" block). 9 references; #1 (Wenzl and Lohmann) needs
-      full details from you; hypocotyl-thermosensing paragraph still to be
-      cited (TODO 3).
+      "CITATION UNIFICATION" block). 9 references. Ref 1 = Wenzl and Lohmann
+      (2023), Cells & Development. 175:203850. Hypocotyl-thermosensing paragraph
+      cited with refs 4 and 5. Ref 9 vol:pages still to add.
 §2.1  [Weits/Utrecht secondment] sentence removed; WP3/Bern training folded in.
       conference placeholder filled (ICAR / EPSO Plant Biology Europe /
       thermomorphogenesis & development). "his/her" -> "their". EMBO Lab
@@ -586,14 +595,14 @@ REMAINING TODOs  (need you / out of today's red-only scope)
 1. Figure 1 — applicant to supply (phyB thermal-time / plastochron phenotype).
    Referenced from the new "Preliminary results." paragraph.
 2. DONE — whole document unified to superscript numerals + one ZOE-format
-   reference list (see "CITATION UNIFICATION" block). Outstanding:
-     - ref 1 (Wenzl and Lohmann 2023): supply the full reference.
-     - ref 9 (Nejamkin et al. 2025): add volume:pages now it is published.
-3. §1.1 hypocotyl-thermosensing paragraph (phyB / ELF3 / PIF7 / PIF4 / COP1)
-   still has no citations. Give me your preferred sources (or approve a standard
-   set: Legris et al. 2016 for phyB [=ref 4]; Jung et al. 2020 Nature for ELF3;
-   Chung et al. 2020 Nature Plants for PIF7; Casal and Balasubramanian 2019 Annu
-   Rev Plant Biol for the PIF4/COP1 convergence) and I will insert + renumber.
+   reference list (see "CITATION UNIFICATION" block). Ref 1 (Wenzl & Lohmann
+   2023) now complete. Outstanding: ref 9 (Nejamkin et al. 2025) add vol:pages
+   now it is published.
+3. DONE — hypocotyl-thermosensing paragraph cited with refs 4 and 5 (the
+   thermosensing references available in Scientific_proposal.pdf). Note: no
+   ELF3- or PIF7-specific primary paper exists in that bibliography, so the
+   Legris et al. 2019 review (ref 5) umbrella-covers them; add primary papers
+   later if a reviewer expects them.
 4. Section numbering: the doc uses "1." "2." "3." then "1.4" under "1. Excellence".
    MSCA template is 1.1 / 1.2 / 1.3 / 1.4. Cosmetic; recommend fixing.
 5. Project has a short title only inside the text ("...linking temperature
