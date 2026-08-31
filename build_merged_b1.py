@@ -54,6 +54,7 @@ def make_gantt(path):
 OUT_DIR = "/tmp/claude-1000/-home-clinse-dev-meli/76931ef6-3fa6-4b72-825b-60ff15571ac3/scratchpad"
 ORIG = "/home/clinse/dev/meli/Luquet Melisa section B1 revised.pdf"
 FINAL = "/home/clinse/dev/meli/Luquet Melisa section B1 MERISTIME.pdf"
+FINAL_DOCX = "/home/clinse/dev/meli/Luquet Melisa section B1 MERISTIME.docx"
 
 CSS = """
 @page { size: A4; margin: 1.4cm 1.9cm; }
@@ -75,6 +76,11 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: 8pt; margin: 2pt 
 table.tbl th, table.tbl td { border: 0.5px solid #999; padding: 2px 4px; text-align: left; vertical-align: top; }
 table.tbl th { background: #eeeeee; }
 table.tbl td.c { text-align: center; }
+table.b2 { border-collapse: collapse; width: 100%; font-size: 8pt; margin: 3pt 0 9pt; }
+table.b2 th, table.b2 td { border: 0.5px solid #666; padding: 3px 4px; text-align: left; vertical-align: top; }
+table.b2 th { background: #e6e6e6; }
+.b2box { border: 0.75px solid #444; padding: 5px 7px; font-size: 9pt; text-align: left; margin: 3pt 0 9pt; }
+.b2fill { display: block; min-height: 34pt; }
 """
 
 def P(runin, rest=""):
@@ -540,8 +546,10 @@ dm = [
  ("M3","Temperature- and thermal-time-responsive gene networks of the SAM defined","WP3","22"),
 ]
 A('<p class="caption">Table 2. Deliverables (D) and milestones (M).</p>')
-A('<table class="tbl"><tr><th>ID</th><th>Title</th><th>WP</th><th>Month</th></tr>' +
-  "".join(f'<tr><td class="c">{i}</td><td>{t}</td><td class="c">{w}</td><td class="c">{mo}</td></tr>'
+A('<table class="tbl" width="638" style="table-layout:fixed">'
+  '<tr><th width="34">ID</th><th width="484">Title</th><th width="60">WP</th><th width="60">Month</th></tr>' +
+  "".join(f'<tr><td width="34" class="c">{i}</td><td width="484">{t}</td>'
+          f'<td width="60" class="c">{w}</td><td width="60" class="c">{mo}</td></tr>'
           for i,t,w,mo in dm) + '</table>')
 
 # ---- Table 3: Risks ----
@@ -572,10 +580,11 @@ risks = [
   "deliverable (M24) whose paper may be completed shortly after tenure."),
 ]
 A('<p class="caption">Table 3. Risk assessment (L = low, M = medium, H = high).</p>')
-A('<table class="tbl">'
-  '<colgroup><col style="width:32%"><col style="width:5%"><col style="width:5%"><col style="width:58%"></colgroup>'
-  '<tr><th>Risk</th><th>L</th><th>I</th><th>Mitigation</th></tr>' +
-  "".join(f'<tr><td>{r}</td><td class="c">{l}</td><td class="c">{im}</td><td>{mit}</td></tr>'
+A('<table class="tbl" width="638" style="table-layout:fixed">'
+  '<tr><th width="188">Risk</th><th width="28">L</th><th width="28">I</th>'
+  '<th width="394">Mitigation</th></tr>' +
+  "".join(f'<tr><td width="188">{r}</td><td width="28" class="c">{l}</td>'
+          f'<td width="28" class="c">{im}</td><td width="394">{mit}</td></tr>'
           for r,l,im,mit in risks) + '</table>')
 
 A('<h2>3.2&nbsp;&nbsp;Quality and capacity of the host institution and participating organisations, '
@@ -634,18 +643,70 @@ A('<div class="refs">' + "".join(f'<p>{i+1}&nbsp;&nbsp;{r}</p>' for i,r in enume
 A('<p class="rule">--------------------------------------- End of page count (max 10 pages) '
   '---------------------------------------</p>')
 
+# ============ PART B-2 (recreated from the template; unchanged content) ============
+E = "<td>&nbsp;</td>"
+A('<div style="page-break-before:always"></div>')
+A('<h1 style="text-align:center;color:#000;font-size:13pt;">Part B-2</h1>')
+A('<p style="text-align:center;font-style:italic;font-size:9pt;margin:0 0 8pt;">'
+  '(No overall page limit applied)</p>')
+A('<h1>4. CV of the researcher</h1>')
+A('<p style="color:#666">Insert here text for your proposal</p>')
+A('<h1>5. Capacity of the Participating Organisation(s)</h1>')
+A('<p><b>5.1 Template table:</b> <i>Overview of Participating Organisations</i></p>')
+A('<table class="b2" border="1" cellspacing="0" width="638" style="table-layout:fixed">'
+  '<tr><th width="170">Organisation role</th><th width="48">PIC</th>'
+  '<th width="100">Legal Entity Short Name</th><th width="96">Academic organisation (Y/N)</th>'
+  '<th width="64">Country</th><th width="90">Name of Supervisor</th></tr>'
+  + "".join(f'<tr><td width="170">{role}</td>'
+            f'<td width="48" height="26">&nbsp;</td><td width="100">&nbsp;</td><td width="96">&nbsp;</td>'
+            f'<td width="64">&nbsp;</td><td width="90">&nbsp;</td></tr>' for role in [
+      "Beneficiary",
+      "Associated partner linked to a beneficiary (if applicable)",
+      "Associated partner for outgoing phase (mandatory for GF)",
+      "Associated partner for secondment (if applicable)",
+      "Associated partner for non-academic placement (if applicable)"])
+  + '</table>')
+A('<p><b>5.2 Template table:</b> <i>Capacity of the Participating Organisations</i></p>')
+A('<p>Maximum 1 page per Beneficiary and &frac12; page per Associated partner.</p>')
+A('<table class="b2" border="1" cellspacing="0" width="638"><tr><td style="text-align:left">Choose one of:<br>'
+  '? Beneficiary (compulsory)<br>'
+  '? Associated partner linked to a beneficiary (if applicable)<br>'
+  '? Associated partner for outgoing phase (mandatory for GF only)<br>'
+  '? Associated partner for secondment (if applicable)<br>'
+  '? Associated partner for non-academic placement (if applicable)</td></tr></table>')
+A('<table class="b2" border="1" cellspacing="0" width="638" style="table-layout:fixed">'
+  '<tr><td colspan="2"><b>[Full name + Legal Entity Short Name + Country]</b></td></tr>'
+  '<tr><td colspan="2"><b>General description</b></td></tr>'
+  '<tr><td width="240"><b>Role and profile of supervisor</b></td>'
+  '<td width="398">&nbsp;<br>&nbsp;<br>&nbsp;</td></tr>'
+  '<tr><td width="240"><b>Key research facilities, Infrastructure and Equipment</b></td>'
+  '<td width="398">&nbsp;<br>&nbsp;<br>&nbsp;</td></tr>'
+  '<tr><td width="240"><b>Previous and current involvement in EU-funded research and training '
+  'programmes/actions/projects</b></td><td width="398">&nbsp;<br>&nbsp;<br>&nbsp;</td></tr></table>')
+A('<h1>6. Additional ethics information</h1>')
+A('<p style="color:#666">Insert here text for your proposal</p>')
+A('<p style="font-style:italic;font-size:9pt">(NB: Only if you have additional information that could '
+  'not be included in the ethics self-assessment)</p>')
+A('<h1>7. Additional information on security screening</h1>')
+A('<p style="color:#666">Insert here text for your proposal</p>')
+A('<p style="font-style:italic;font-size:9pt">(NB: Only if you answered yes to one of the questions in '
+  'the security issues table, with the exception of &ldquo;Does this activity involved HE associated '
+  'and/or third countries?&rdquo;)</p>')
+A('<h1>8. Environmental considerations in light of the MSCA Green Charter</h1>')
+A('<p style="color:#666">Insert here text for your proposal</p>')
+A('<h1>9. Required for Global Fellowships only: Letter of commitment from the associated partner '
+  'hosting the outgoing phase</h1>')
+A('<p style="color:#666">Insert here the Letter of commitment (if applicable)</p>')
+
 html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body>{''.join(blocks)}</body></html>"
-htmlpath = os.path.join(OUT_DIR, "merged_b1.html")
+htmlpath = os.path.join(OUT_DIR, "merged_full.html")
 open(htmlpath, "w", encoding="utf-8").write(html)
 
-subprocess.run(["libreoffice", "--headless", "--convert-to", "pdf", "--outdir", OUT_DIR, htmlpath],
-               check=True, capture_output=True)
-b1pdf = os.path.join(OUT_DIR, "merged_b1.pdf")
-print("B1 pages:", pymupdf.open(b1pdf).page_count)
-
-# assemble: new B1 + original pages 9-11 (Part B-2)
-out = pymupdf.open(b1pdf)
-orig = pymupdf.open(ORIG)
-out.insert_pdf(orig, from_page=8, to_page=10)
-out.save(FINAL)
-print("FINAL:", FINAL, "pages:", out.page_count)
+for fmt in ("pdf", "docx:MS Word 2007 XML"):
+    subprocess.run(["libreoffice", "--headless", "--convert-to", fmt, "--outdir", OUT_DIR, htmlpath],
+                   check=True, capture_output=True)
+import shutil
+shutil.copy(os.path.join(OUT_DIR, "merged_full.pdf"), FINAL)
+shutil.copy(os.path.join(OUT_DIR, "merged_full.docx"), FINAL_DOCX)
+print("PDF :", FINAL, "pages:", pymupdf.open(FINAL).page_count)
+print("DOCX:", FINAL_DOCX)
