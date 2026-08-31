@@ -1,26 +1,80 @@
 # -*- coding: utf-8 -*-
 """Build merged Part B-1 (B1_red_revisions.md applied to the original text),
 render to PDF via LibreOffice, then append the original Part B-2 pages (9-11)."""
-import subprocess, os, pymupdf
+import subprocess, os, base64, pymupdf
+from PIL import Image, ImageDraw, ImageFont
+
+def make_gantt(path):
+    SANS  = "/usr/share/fonts/liberation-sans-fonts/LiberationSans-Regular.ttf"
+    SANSB = "/usr/share/fonts/liberation-sans-fonts/LiberationSans-Bold.ttf"
+    f_lbl = ImageFont.truetype(SANS, 26)
+    f_hdr = ImageFont.truetype(SANSB, 24)
+    f_ms  = ImageFont.truetype(SANSB, 22)
+    LBLW, CW, HDRH, ROWH = 620, 46, 42, 52
+    x0 = 20 + LBLW
+    rows = [
+      ("T1.1  Plastochron & phyllotaxis vs thermal time", (169,200,232), 1, 8),
+      ("T1.2  Live imaging of reporters (CherryTemp)",     (169,200,232), 3, 12),
+      ("T2.1  Redox compartmentalisation vs temperature",  (183,215,168), 4, 12),
+      ("T2.2  NO transducer: donors/scavengers, mutants",  (183,215,168), 6, 20),
+      ("T3.1  Factorial snRNA-seq (with Reis, U Bern)",    (245,195,150), 8, 16),
+      ("T3.2  Analysis & candidate gene networks",         (245,195,150), 14, 22),
+      ("T4.1  Management, supervision, DMP & CDP",          (204,204,204), 1, 24),
+      ("T5.1  Conferences and seminars",                    (217,179,208), 1, 24),
+      ("T5.2  Public engagement / outreach",                (217,179,208), 4, 24),
+      ("T5.3  Manuscript 1 (WP1+WP2)",                      (217,179,208), 16, 22),
+      ("T5.4  Manuscript 2 (WP3)",                          (217,179,208), 21, 24),
+      ("Long-lead: mutant x reporter crosses",              (221,221,221), 1, 6),
+    ]
+    mstones = {6: "M1", 18: "M2", 22: "M3"}
+    W = x0 + 24*CW + 14
+    H = HDRH + (len(rows)+1)*ROWH + 8
+    im = Image.new("RGB", (W, H), "white")
+    d = ImageDraw.Draw(im)
+    for m in range(25):
+        gx = x0 + m*CW
+        d.line([(gx, HDRH-4), (gx, H-8)], fill=(210,210,210), width=1)
+    for m in range(1, 25):
+        d.text((x0 + (m-0.5)*CW, HDRH/2), str(m), font=f_hdr, fill=(60,60,60), anchor="mm")
+    d.line([(0, HDRH-4), (W, HDRH-4)], fill=(120,120,120), width=1)
+    for i, (lbl, col, s, e) in enumerate(rows):
+        ry = HDRH + i*ROWH
+        d.text((20, ry + ROWH/2), lbl, font=f_lbl, fill=(20,20,20), anchor="lm")
+        bx0, bx1 = x0 + (s-1)*CW, x0 + e*CW
+        d.rectangle([bx0+1, ry+5, bx1-1, ry+ROWH-5], fill=col, outline=(150,150,150))
+    my = HDRH + len(rows)*ROWH
+    d.text((20, my + ROWH/2), "Milestones (M1-M3)", font=f_ms, fill=(20,20,20), anchor="lm")
+    for m, name in mstones.items():
+        cx, cy, r = x0 + (m-0.5)*CW, my + ROWH/2, 7
+        d.polygon([(cx, cy-r), (cx+r, cy), (cx, cy+r), (cx-r, cy)], fill=(30,30,30))
+        d.text((cx, cy - r - 9), name, font=f_ms, fill=(20,20,20), anchor="mm")
+    im.save(path, "PNG")
+    return path
 
 OUT_DIR = "/tmp/claude-1000/-home-clinse-dev-meli/76931ef6-3fa6-4b72-825b-60ff15571ac3/scratchpad"
 ORIG = "/home/clinse/dev/meli/Luquet Melisa section B1 revised.pdf"
 FINAL = "/home/clinse/dev/meli/Luquet Melisa section B1 MERISTIME.pdf"
 
 CSS = """
-@page { size: A4; margin: 2cm 2.2cm; }
-body { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.30;
+@page { size: A4; margin: 1.4cm 1.9cm; }
+body { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.13;
        text-align: justify; color: #000; }
-h1 { font-size: 13pt; color: #0f4761; margin: 18pt 0 6pt; }
-h2 { font-size: 11.5pt; font-style: italic; margin: 14pt 0 4pt; }
-p  { margin: 0 0 7pt; }
-.title { text-align: center; font-weight: bold; font-size: 11.5pt; margin: 6pt 0 12pt; }
-.hdr { font-size: 9pt; color: #555; text-align: center; margin: 0 0 4pt; }
+h1 { font-size: 12.5pt; color: #0f4761; margin: 12pt 0 4pt; }
+h2 { font-size: 11pt; font-style: italic; margin: 9pt 0 3pt; }
+p  { margin: 0 0 5pt; }
+.title { text-align: center; font-weight: bold; font-size: 11.5pt; margin: 5pt 0 8pt; }
+.hdr { font-size: 9pt; color: #555; text-align: center; margin: 0 0 3pt; }
 .runin { font-weight: bold; }
-.refs { font-size: 9.5pt; line-height: 1.25; }
-.refs p { margin: 0 0 2pt; }
-hr { border: none; border-top: 1px solid #999; margin: 10pt 0; }
-.rule { text-align: center; color: #555; font-size: 9pt; margin: 10pt 0; }
+.refs { font-size: 9pt; line-height: 1.15; }
+.refs p { margin: 0 0 1pt; }
+.rule { text-align: center; color: #555; font-size: 9pt; margin: 8pt 0; }
+.caption { font-weight: bold; font-size: 9pt; margin: 7pt 0 2pt; }
+.legend { font-size: 8pt; color: #444; margin: 0 0 6pt; }
+img.gantt { width: 100%; margin: 2pt 0 2pt; }
+table.tbl { border-collapse: collapse; width: 100%; font-size: 8pt; margin: 2pt 0 7pt; line-height: 1.12; }
+table.tbl th, table.tbl td { border: 0.5px solid #999; padding: 2px 4px; text-align: left; vertical-align: top; }
+table.tbl th { background: #eeeeee; }
+table.tbl td.c { text-align: center; }
 """
 
 def P(runin, rest=""):
@@ -433,12 +487,136 @@ A(P('Economic impact.',
 A('<h1>3. Quality and Efficiency of the Implementation</h1>')
 A('<h2>3.1&nbsp;&nbsp;Quality and effectiveness of the work plan, assessment of risks and appropriateness '
   'of the effort assigned to work packages</h2>')
-A('<p style="color:#666">[Insert here text for your proposal &mdash; Gantt chart, task/deliverable/'
-  'milestone table, risk table. Not yet drafted.]</p>')
-A('<h2>3.2&nbsp;&nbsp;Quality and capacity of the host institutions and participating organisations, '
+A(P('', 'The project is organised into three scientific work packages (WP1&ndash;WP3) that together answer '
+     'one question &mdash; how the shoot apical meristem reads temperature to set the plastochron &mdash; '
+     'plus a management and training work package (WP4) and a dissemination work package (WP5). The '
+     'scientific WPs are sequenced so that each constrains the next while remaining individually '
+     'informative. WP1 establishes the temperature response of the meristem on a thermal-time basis and '
+     'fixes the developmental time windows and reporter lines used downstream. WP2 tests the two candidate '
+     'transducers &mdash; phyB and the redox/NO system &mdash; against that baseline. WP3 profiles the '
+     'response at single-cell resolution under a design that separates temperature from developmental '
+     'stage. The decisive result of the project &mdash; whether NO perturbation reproduces the loss of '
+     'thermal-time compensation seen in phyB &mdash; lies in WP2 and does not depend on the success of the '
+     'more exploratory WP3.'))
+A(P('Interdependencies and critical path.',
+    'T1.1 (plastochron phenotyping) is the first experiment and the critical-path entry point: it is '
+    'technically straightforward, uses an assay I have already established, and its per-genotype linear '
+    'models define which temperatures, time windows and genotypes are carried into WP2 and WP3. Live '
+    'imaging (T1.2) and the redox/NO experiments (WP2) run in parallel from M3&ndash;M6 onward. WP3 tissue '
+    'collection begins once T1.1 has fixed the two thermal-time points (M8), with a pilot sequencing run '
+    'before the full factorial. Long-lead work &mdash; crosses of the NO-pathway mutants into the pCLV3, '
+    'pWUS, DR5 and PIN1 reporter backgrounds &mdash; starts in M1 to accommodate the 6&ndash;8-week '
+    'Arabidopsis generation time.'))
+A(P('Effort.',
+    'The action supports one researcher for 24 months (24 person-months), distributed approximately as '
+    'WP1 7 PM, WP2 8 PM, WP3 6 PM, WP4 1 PM and WP5 2 PM. WP2 carries the largest share because it '
+    'contains the decisive experiment and the widest range of techniques (in vivo imaging, histochemistry, '
+    'pharmacology, genetics, biotin-switch). WP3 is deliberately bounded: the factorial design and the '
+    'collaboration with the Reis group (University of Bern) keep the single-cell component to a defined, '
+    'well-supported task rather than an open-ended screen. The 24-month duration is appropriate &mdash; '
+    'WP1 completes by M12, WP2 by M20, and the WP3 dataset is deposited by M24, leaving the final months '
+    'for analysis, write-up and the second manuscript.'))
+
+# ---- Table 1: Gantt (PIL PNG, embedded) ----
+gpng = os.path.join(OUT_DIR, "gantt.png")
+make_gantt(gpng)
+g_b64 = base64.b64encode(open(gpng, "rb").read()).decode()
+A('<p class="caption">Table 1. Work-package schedule (months 1&ndash;24).</p>')
+A(f'<img src="data:image/png;base64,{g_b64}" width="638">')
+A('<p class="legend">Bars = task active; &#9670; = milestone. WP1 blue, WP2 green, WP3 orange, '
+  'WP4 grey, WP5 pink; long-lead crossing work in light grey. Task titles as in section 1.2.</p>')
+
+# ---- Table 2: Deliverables & Milestones ----
+dm = [
+ ("D1","Career Development Plan","WP4","3"),
+ ("D2","Data Management Plan (FAIR)","WP4","6"),
+ ("D3","Report: temperature response of the SAM (WP1)","WP1","12"),
+ ("D4","Curated dataset: redox/NO maps and perturbation phenotypes","WP2","20"),
+ ("D5","Processed single-nucleus dataset, deposited with a persistent identifier","WP3","24"),
+ ("D6","Manuscript 1 (WP1+WP2) posted as a preprint at submission","WP5","22"),
+ ("D7","Manuscript 2 (WP3) posted as a preprint at submission","WP5","24"),
+ ("M1","Temperatures, time windows and reporter/mutant set fixed for WP2&ndash;WP3","WP1","6"),
+ ("M2","Decisive experiment concluded: does NO perturbation phenocopy phyB?","WP2","18"),
+ ("M3","Temperature- and thermal-time-responsive gene networks of the SAM defined","WP3","22"),
+]
+A('<p class="caption">Table 2. Deliverables (D) and milestones (M).</p>')
+A('<table class="tbl"><tr><th>ID</th><th>Title</th><th>WP</th><th>Month</th></tr>' +
+  "".join(f'<tr><td class="c">{i}</td><td>{t}</td><td class="c">{w}</td><td class="c">{mo}</td></tr>'
+          for i,t,w,mo in dm) + '</table>')
+
+# ---- Table 3: Risks ----
+risks = [
+ ("The phyB thermal-time phenotype does not hold under controlled temperature shifts, or effect sizes "
+  "are small.","L","M",
+  "The phenotyping assay is already established and gives robust per-genotype linear models; multiple "
+  "constant temperatures and shift regimes; increased replication; independent readouts (leaf number, "
+  "SAM size, reporter domains)."),
+ ("NO perturbation produces no plastochron phenotype.","M","M",
+  "A null result still discriminates between models and is publishable: Task 2.1 independently tests the "
+  "ROS branch, and pharmacology, genetics and reporter localisation triangulate. The glutathione control "
+  "separates NO-specific from general thiol-redox effects."),
+ ("Single-nucleus RNA-seq under-samples the meristem, or nuclei yield from the vegetative apex is low.",
+  "M","M",
+  "Micro-dissection enrichment of the apex; pilot run at M8 before the full factorial; the Reis group has "
+  "aerial-tissue protocols; fallback to reporter-sorted low-input RNA-seq of zonal populations."),
+ ("Delay or reduced availability in the Reis collaboration.","L","M",
+  "Written work plan and scheduled technical visits from M1; sequencing can be outsourced to a core "
+  "facility; analysis pipelines are portable and partly covered by SIB courses."),
+ ("CherryTemp live-imaging of the apex is technically demanding (drift, phototoxicity, z-range).","M","L",
+  "The system and confocal are installed and in routine use in the host lab; start with stable set-points "
+  "before rapid shifts; WP1's core result (T1.1) does not depend on live imaging."),
+ ("Arabidopsis line generation slower than the 6&ndash;8-week cycle allows.","M","L",
+  "Reporter and mutant lines are already in the host lab; crosses started in M1; staggered sowing."),
+ ("24 months too short for two manuscripts.","L","M",
+  "Manuscript 1 (WP1+WP2) is self-contained and targeted for M22; the WP3 dataset is a standalone "
+  "deliverable (M24) whose paper may be completed shortly after tenure."),
+]
+A('<p class="caption">Table 3. Risk assessment (L = low, M = medium, H = high).</p>')
+A('<table class="tbl">'
+  '<colgroup><col style="width:32%"><col style="width:5%"><col style="width:5%"><col style="width:58%"></colgroup>'
+  '<tr><th>Risk</th><th>L</th><th>I</th><th>Mitigation</th></tr>' +
+  "".join(f'<tr><td>{r}</td><td class="c">{l}</td><td class="c">{im}</td><td>{mit}</td></tr>'
+          for r,l,im,mit in risks) + '</table>')
+
+A('<h2>3.2&nbsp;&nbsp;Quality and capacity of the host institution and participating organisations, '
   'including hosting arrangements</h2>')
-A('<p style="color:#666">[Insert here text for your proposal &mdash; host capacity, facilities, '
-  'supervisor track record. Not yet drafted.]</p>')
+A(P('Host institution.',
+    'The fellowship is hosted by the group of Prof. Martina Legris at the Institute of Biology, Faculty of '
+    'Sciences, University of Neuch&acirc;tel (UniNE). The institute is an established centre for plant '
+    'biology in Switzerland, with several groups working on plant development, physiology and '
+    'plant&ndash;environment interactions, a shared seminar programme, and membership of the CUSO doctoral '
+    'programme in plant sciences and the Swiss Plant Science Web. This gives the fellow an immediate '
+    'community in plant developmental and environmental biology and structured doctoral- and '
+    'postdoctoral-level training.'))
+A(P('Research environment and equipment.',
+    'The host group is funded by an SNSF Starting Grant (&ldquo;Environmental control of shoot '
+    'architecture in Arabidopsis&rdquo;, 2023&ndash;2028) and a two-year Fondation Mercier pour la Science '
+    'grant that establishes the temperature-and-leaf-initiation line this fellowship contributes to. The '
+    'infrastructure the project needs is in place: a spectral confocal microscope co-funded by the '
+    'supervisor (SNSF R&rsquo;equip, 2024); a CherryTemp sample-level temperature-control system for live '
+    'imaging; controlled-environment growth chambers with temperature logging; and full molecular-biology, '
+    'histochemistry and plant-transformation facilities. The reporter lines (pCLV3, pWUS, DR5, PIN1) and '
+    'the thermosensor and NO-pathway mutants required by the project are already available in the group.'))
+A(P('Supervision.',
+    'Prof. Legris is a foundational contributor to plant thermomorphogenesis &mdash; first author of the '
+    'work establishing phyB as a thermosensor<sup>4</sup> and of subsequent work on light and temperature '
+    'control of leaf and meristem morphogenesis<sup>5&ndash;6</sup> &mdash; and holds the 2023 <i>New '
+    'Phytologist</i> Tansley Medal. As a former MSCA, EMBO and HFSP fellow she knows the instrument from '
+    'the inside. The group comprises the supervisor, one postdoctoral researcher and one PhD student; '
+    'supervision is organised around weekly one-to-one and group meetings, a Career Development Plan '
+    'reviewed at regular intervals, and quarterly progress presentations, with co-supervision of a '
+    'master&rsquo;s student planned for the fellow in year 2 (see 1.3).'))
+A(P('Career and open-science support.',
+    'The UniNE Graduate Campus (swissuniversities 2025&ndash;2028 programme) provides transferable-skills '
+    'and career training; the university&rsquo;s research and technology-transfer services support grant '
+    'preparation and any exploitation questions; and the Libra institutional repository ensures Horizon '
+    'Europe-compliant open access. The fellow will also access CUSO and UniNE doctoral-programme courses '
+    'and the R&eacute;seau romand de mentorat pour femmes and REGARD programmes.'))
+A(P('Participating organisation &mdash; University of Bern (collaboration).',
+    'The single-nucleus transcriptomics of WP3 is carried out with the group of Dr R. Reis at the '
+    'University of Bern (~40 minutes from Neuch&acirc;tel), which provides single-cell/nucleus methodology '
+    'and computational analysis. This is a scientific collaboration involving short technical visits, not '
+    'a beneficiary or associated-partner role, and no secondment is foreseen.'))
 
 A('<h2 style="font-style:normal;font-weight:bold">References</h2>')
 refs = [

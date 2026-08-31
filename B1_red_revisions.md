@@ -502,6 +502,190 @@ the project ends — and by training a researcher whose combined skill set is
 scarce.
 
 ================================================================================
+§3  QUALITY AND EFFICIENCY OF THE IMPLEMENTATION  (new — replaces the two
+     "Insert here text for your proposal" placeholders)
+================================================================================
+
+3.1 Quality and effectiveness of the work plan, assessment of risks and
+appropriateness of the effort assigned to work packages
+
+The project is organised into three scientific work packages (WP1–WP3) that
+together answer one question — how the shoot apical meristem reads temperature
+to set the plastochron — plus a management and training work package (WP4) and
+a dissemination work package (WP5). The scientific WPs are sequenced so that
+each constrains the next while remaining individually informative. WP1
+establishes the temperature response of the meristem on a thermal-time basis and
+fixes the developmental time windows and reporter lines used downstream. WP2
+tests the two candidate transducers — phyB and the redox/NO system — against
+that baseline. WP3 profiles the response at single-cell resolution under a
+design that separates temperature from developmental stage. The decisive result
+of the project — whether NO perturbation reproduces the loss of thermal-time
+compensation seen in phyB — lies in WP2 and does not depend on the success of
+the more exploratory WP3.
+
+Interdependencies and critical path. T1.1 (plastochron phenotyping) is the first
+experiment and the critical-path entry point: it is technically straightforward,
+uses an assay I have already established, and its per-genotype linear models
+define which temperatures, time windows and genotypes are carried into WP2 and
+WP3. Live imaging (T1.2) and the redox/NO experiments (WP2) run in parallel from
+M3–M6 onward. WP3 tissue collection begins once T1.1 has fixed the two
+thermal-time points (M8), with a pilot sequencing run before the full factorial.
+Long-lead work — crosses of the NO-pathway mutants into the pCLV3, pWUS, DR5 and
+PIN1 reporter backgrounds — starts in M1 to accommodate the 6–8-week Arabidopsis
+generation time.
+
+Effort. The action supports one researcher for 24 months (24 person-months),
+distributed approximately as WP1 7 PM, WP2 8 PM, WP3 6 PM, WP4 1 PM, WP5 2 PM.
+WP2 carries the largest share because it contains the decisive experiment and
+the widest range of techniques (in vivo imaging, histochemistry, pharmacology,
+genetics, biotin-switch). WP3 is deliberately bounded: the factorial design and
+the collaboration with the Reis group (University of Bern) keep the single-cell
+component to a defined, well-supported task rather than an open-ended screen. The
+24-month duration is appropriate — WP1 completes by M12, WP2 by M20, and the WP3
+dataset is deposited by M24, leaving the final months for analysis, write-up and
+the second manuscript.
+
+------------------------------------------------------------------------
+TABLE 1 — Gantt chart (● = active; ◆ = milestone). Months 1–24.
+------------------------------------------------------------------------
+                                          1 2 3 4 5 6 7 8 9 10 12 14 16 18 20 22 24
+WP1  T1.1 Plastochron/phyllotaxis vs      ● ● ● ● ● ● ● ●
+          thermal time
+     T1.2 Live imaging under CherryTemp       ● ● ● ● ● ● ● ● ● ●
+     ◆ M1  Temperatures, time windows &              ◆
+          reporter/mutant set fixed (M6)
+WP2  T2.1 Redox compartmentalisation vs         ● ● ● ● ● ● ● ● ●
+          temperature
+     T2.2 NO as candidate transducer                 ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+     ◆ M2  Decisive NO-vs-phyB experiment                          ◆
+          concluded (M18)
+WP3  T3.1 Factorial snRNA-seq (with Reis)                 ● ● ● ● ● ● ● ●
+     T3.2 Analysis & candidate networks                           ● ● ● ● ●
+     ◆ M3  Temperature/thermal-time gene                                  ◆
+          networks defined (M22)
+WP4  T4.1 Management, supervision, DMP/CDP  ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●
+WP5  T5.1 Conferences & seminars                    ●         ●         ●   ●
+     T5.2 Outreach                                  ●             ●         ●
+     T5.3 Manuscript 1 (WP1+WP2)                                  ● ● ● ●
+     T5.4 Manuscript 2 (WP3)                                              ● ●
+lead Crosses: NO mutants × reporters       ● ● ● ● ● ●
+
+(Render as a proper 24-column table in Word; the ASCII grid above is only a
+layout guide. The MERISTIME PDF already contains the formatted version.)
+
+------------------------------------------------------------------------
+TABLE 2 — Deliverables and milestones
+------------------------------------------------------------------------
+D1  Career Development Plan                                   WP4   M3
+D2  Data Management Plan (FAIR)                               WP4   M6
+D3  Report: temperature response of the SAM (WP1)            WP1   M12
+D4  Curated dataset: redox/NO maps + perturbation phenotypes WP2   M20
+D5  Processed single-nucleus dataset, deposited (persistent
+    identifier)                                              WP3   M24
+D6  Manuscript 1 (WP1+WP2) posted as preprint at submission  WP5   M22
+D7  Manuscript 2 (WP3) posted as preprint at submission      WP5   M24
+M1  Temperatures, time windows and reporter/mutant set fixed
+    for WP2–WP3                                               WP1   M6
+M2  Decisive experiment concluded: does NO perturbation
+    phenocopy phyB?                                           WP2   M18
+M3  Temperature- and thermal-time-responsive gene networks
+    of the SAM defined                                        WP3   M22
+
+------------------------------------------------------------------------
+TABLE 3 — Risk assessment (L = low, M = medium, H = high)
+------------------------------------------------------------------------
+Risk | Likelihood | Impact | Mitigation
+
+1. The phyB thermal-time phenotype does not hold under controlled temperature
+   shifts, or effect sizes are small.  | L | M |
+   The phenotyping assay is already established and gives robust per-genotype
+   linear models; multiple constant temperatures and shift regimes; increased
+   replication; independent readouts (leaf number, SAM size, reporter domains).
+
+2. NO perturbation produces no plastochron phenotype.  | M | M |
+   A null result still discriminates between models and is publishable: Task 2.1
+   independently tests the ROS branch, and pharmacology, genetics and reporter
+   localisation triangulate. The glutathione control separates NO-specific from
+   general thiol-redox effects.
+
+3. Single-nucleus RNA-seq under-samples the meristem / low nuclei yield from the
+   vegetative apex.  | M | M |
+   Micro-dissection enrichment of the apex; pilot run at M8 before the full
+   factorial; the Reis group has aerial-tissue protocols; fallback to
+   reporter-sorted low-input RNA-seq of zonal populations.
+
+4. Delay or reduced availability in the Reis collaboration.  | L | M |
+   Written work plan and scheduled technical visits from M1; sequencing can be
+   outsourced to a core facility; analysis pipelines are portable and partly
+   covered by SIB courses.
+
+5. CherryTemp live-imaging of the apex is technically demanding (drift,
+   phototoxicity, z-range).  | M | L |
+   The system and confocal are installed and in routine use in the host lab;
+   start with stable set-points before rapid shifts; WP1's core result (T1.1)
+   does not depend on live imaging.
+
+6. Arabidopsis line generation slower than the 6–8-week cycle allows.  | M | L |
+   Reporter and mutant lines are already in the host lab; crosses started in M1;
+   staggered sowing.
+
+7. 24 months too short for two manuscripts.  | L | M |
+   Manuscript 1 (WP1+WP2) is self-contained and targeted for M22; the WP3
+   dataset is a standalone deliverable (M24) whose paper may be completed shortly
+   after tenure.
+
+
+3.2 Quality and capacity of the host institution and participating
+organisations, including hosting arrangements
+
+Host institution. The fellowship is hosted by the group of Prof. Martina Legris
+at the Institute of Biology, Faculty of Sciences, University of Neuchâtel
+(UniNE). The institute is an established centre for plant biology in Switzerland,
+with several groups working on plant development, physiology and
+plant–environment interactions, a shared seminar programme, and membership of
+the CUSO doctoral programme in plant sciences and the Swiss Plant Science Web.
+This gives the fellow an immediate community in plant developmental and
+environmental biology and structured doctoral- and postdoctoral-level training.
+
+Research environment and equipment. The host group is funded by an SNSF Starting
+Grant ("Environmental control of shoot architecture in Arabidopsis", 2023–2028)
+and a two-year Fondation Mercier pour la Science grant that establishes the
+temperature-and-leaf-initiation line this fellowship contributes to. The
+infrastructure the project needs is in place: a spectral confocal microscope
+co-funded by the supervisor (SNSF R'equip, 2024); a CherryTemp sample-level
+temperature-control system for live imaging; controlled-environment growth
+chambers with temperature logging; and full molecular-biology, histochemistry
+and plant-transformation facilities. The reporter lines (pCLV3, pWUS, DR5, PIN1)
+and the thermosensor and NO-pathway mutants required by the project are already
+available in the group.
+
+Supervision. Prof. Legris is a foundational contributor to plant
+thermomorphogenesis — first author of the work establishing phyB as a
+thermosensor (Legris et al., Science, 2016) and of subsequent work on light and
+temperature control of leaf and meristem morphogenesis — and holds the 2023 New
+Phytologist Tansley Medal. As a former MSCA, EMBO and HFSP fellow she knows the
+instrument from the inside. The group comprises the supervisor, one postdoctoral
+researcher and one PhD student; supervision is organised around weekly
+one-to-one and group meetings, a Career Development Plan reviewed at regular
+intervals, and quarterly progress presentations, with co-supervision of a
+master's student planned for the fellow in year 2 (see 1.3).
+
+Career and open-science support. The UniNE Graduate Campus (swissuniversities
+2025–2028 programme) provides transferable-skills and career training; the
+university's research and technology-transfer services support grant preparation
+and any exploitation questions; and the Libra institutional repository ensures
+Horizon Europe-compliant open access. The fellow will also access CUSO and UniNE
+doctoral-programme courses and the Réseau romand de mentorat pour femmes and
+REGARD programmes.
+
+Participating organisation — University of Bern (collaboration). The
+single-nucleus transcriptomics of WP3 is carried out with the group of Dr R.
+Reis at the University of Bern (~40 minutes from Neuchâtel), which provides
+single-cell/nucleus methodology and computational analysis. This is a scientific
+collaboration involving short technical visits, not a beneficiary or
+associated-partner role, and no secondment is foreseen.
+
+================================================================================
 CITATION UNIFICATION — whole of Part B-1 (§1.1–§1.4)
 ================================================================================
 
@@ -614,6 +798,12 @@ FMT   §0 added: acronym MERISTIME + title "MERISTIME — From thermosensing to
       organ timing in the shoot apical meristem"; running header and title-line
       placement specified. §0b: renumber 1./2./3. -> 1.1/1.2/1.3 under
       "1. Excellence". Page estimate done (see STATUS).
+§3    Drafted from scratch: 3.1 work-plan narrative (interdependencies, critical
+      path, 24 PM effort split WP1 7 / WP2 8 / WP3 6 / WP4 1 / WP5 2), Table 1
+      Gantt (24 months, T1.1-T5.4 + M1-M3), Table 2 deliverables/milestones
+      (D1-D7, M1-M3), Table 3 risk assessment (7 risks). 3.2 host capacity
+      (UniNE Institute of Biology, equipment, supervision, career/open-science
+      support, Bern collaboration). Numbers are best-estimate — verify.
 §2.1  [Weits/Utrecht secondment] sentence removed; WP3/Bern training folded in.
       conference placeholder filled (ICAR / EPSO Plant Biology Europe /
       thermomorphogenesis & development). "his/her" -> "their". EMBO Lab
@@ -645,15 +835,12 @@ RESOLVED this session:
     placed; section renumbering 1./2./3. -> 1.1/1.2/1.3 specified; superscript
     markers converted to Unicode. Page estimate below.
 
-PAGE ESTIMATE (Part B-1, max 10 pp):
-  Current §1+§2 occupy ~6.5 pp of the PDF. The revisions are close to
-  length-neutral for §2 (the rewrites replace full paragraphs, not stubs); the
-  real additions are the new "Preliminary results" paragraph (~150 words) and
-  the slightly more verbose Task structure in §1.2 (~150 words) — together
-  ~+0.5 page. Expect §1+§2 ~= 7 pp, leaving ~3 pp for §3 (Gantt + risk table +
-  §3.2). Feasible, but §3 must be kept tight — the Gantt alone typically takes
-  most of a page. Re-measure once pasted; if over, first trim targets are the
-  §2.3 "Scientific impact" paragraph and the second half of §2.1.
+PAGE COUNT (measured in the MERISTIME PDF):
+  Part B-1 (§1 + §2 + §3, incl. references) = exactly 10 pages — within the
+  limit. Part B-2 carried over unchanged (3 pages). Achieved at 11 pt, ~1.13
+  line spacing, ~1.4 cm margins (MSCA-compliant). If you paste into a template
+  with looser spacing you will run ~1 page over; in that case trim the §2.3
+  "Scientific impact" paragraph and the second half of §2.1 first.
 
 ================================================================================
 REMAINING TODOs
@@ -669,10 +856,13 @@ A. NEEDS THE APPLICANT
      (Dr / Prof) for the final text of §1.2 Task 3.2 and §1.3 Secondment.
 
 B. STILL TO WRITE (was outside the red-only scope)
-  4. §3 Quality and Efficiency of the Implementation — Gantt chart, risk table,
-     and §3.2 host-capacity text are still "Insert here text for your proposal".
-  5. Part B-2 §5.2 (host capacity table) and §8 (MSCA Green Charter) — still
-     template text.
+  4. DONE — §3 drafted: §3.1 work-plan narrative + Table 1 (Gantt) + Table 2
+     (deliverables/milestones) + Table 3 (risks); §3.2 host capacity. In the
+     MERISTIME PDF and the "§3" block above. Review the person-month split,
+     milestone months and D/M list against your actual plan.
+  5. Part B-2 — §4 (CV of the researcher), §5.2 (host-capacity table), §6–§8
+     (ethics / security / MSCA Green Charter), §9 (n/a, no GF) still template
+     text. Not addressed.
 
 C. FORMATTING / POLISH ON PASTE
   6. DONE (spec) — section renumbering: see §0b. Apply the heading changes in Word.
